@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { HashRouter, Switch, Route } from 'react-router-dom'
 import { HomeView } from '../view/HomeView'
 import { SignInView } from '../view/SignInView'
 import RoutingPath from './RoutingPath'
@@ -33,7 +33,7 @@ return authUser ? allowed : notAllowed
     }, [])
 
     return (
-        <BrowserRouter>
+        <HashRouter hashType='noslash'>
             {children}
             <Switch>
                 <Route exact path={RoutingPath.homeView} component={HomeView} />
@@ -48,8 +48,7 @@ return authUser ? allowed : notAllowed
                 <Route component={HomeView} />
 
             </Switch>
-
-        </BrowserRouter>
+            </HashRouter>
     )
 
 
