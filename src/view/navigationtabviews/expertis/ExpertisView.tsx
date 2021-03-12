@@ -42,7 +42,9 @@ export const ExpertisView = () => {
             <button onClick={() => create()}>Create user</button><br />
             <hr />
             <h1>Displaying all users</h1>
-            {users.map((x: any) => <div><span>{x.username}</span></div>)}
+            {users.map((x: any) => <div><span><i><b>ID: </b>{x._id}</i><br /><b>Username: {x.username}</b><br /><b>Password: </b>{x.password}<br /><b>Age: </b>{x.age}<hr /></span></div>)}<br />
+            
+            
         </div>
     );
 }
